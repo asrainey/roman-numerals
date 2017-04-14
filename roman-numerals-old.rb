@@ -1,6 +1,6 @@
 #write a method to convert an integer to a Roman numeral string
 def convert number
-  if number.to_i <= 3000
+  if number <= 3000
     old_roman_numeral = ('M' * (number.to_i / 1000).to_i).to_s + \
     ('D' * ((number.to_i%1000).to_i / 500).to_i).to_s + \
     ('C' * ((number.to_i%500).to_i / 100).to_i).to_s + \
