@@ -1,14 +1,12 @@
 #write a method to convert an integer to a Roman numeral string
 def convert number
-  if number <= 3000
-    old_roman_numeral = ('M' * (number.to_i / 1000).to_i).to_s + \
-    ('D' * ((number.to_i%1000).to_i / 500).to_i).to_s + \
-    ('C' * ((number.to_i%500).to_i / 100).to_i).to_s + \
-    ('L' * ((number.to_i%100) / 50).to_i).to_s + \
-    ('X' * ((number.to_i%50).to_i / 10).to_i).to_s + \
-    ('V' * ((number.to_i%10).to_i / 5).to_i).to_s + \
-    ('I' * (number.to_i%5).to_i).to_s
-  end
+  old_roman_numeral = 'M' * (number.to_i / 1000) + \
+  'D' * ((number.to_i % 1000) / 500) + \
+  'C' * ((number.to_i % 500) / 100) + \
+  'L' * ((number.to_i % 100) / 50) + \
+  'X' * ((number.to_i % 50) / 10) + \
+  'V' * ((number.to_i % 10) / 5) + \
+  'I' * (number.to_i % 5)
   puts old_roman_numeral
 end
 
