@@ -1,10 +1,10 @@
 def convert number
   roman_numeral = 'M' * (number.to_i / 1000) + \
   'IM' * ((number.to_i % 1000) / 999) + \
-    #('D' * ((number.to_i%1000).to_i / 500).to_i).to_s + \ #need to exclude 999 from this
-  'ID' * ((number.to_i % 500) / 499) + \
-  'C' * ((number.to_i % 500) / 100) + \
-  'IC' * ((number.to_i % 500) / 99) + \
+  'D' * (((number.to_i % 1000) / 500) - ((number.to_i % 1000) / 999)) + \
+  'ID' * (((number.to_i % 500) / 499) - ((number.to_i % 1000) / 999)) + \
+  'C' * (((number.to_i % 500) / 100) - (4 * ((number.to_i % 500) / 499))) + \
+  'IC' * (((number.to_i % 100) / 99) - ((number.to_i % 500) / 499)) + \
   'L' * (((number.to_i % 100) / 50) - ((number.to_i % 100) / 99)) + \
   'IL'* (((number.to_i % 50) / 49) - ((number.to_i % 100) / 99)) + \
   'X' * (((number.to_i % 50) / 10) - (4 * ((number.to_i % 50) / 49))) + \
